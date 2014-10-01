@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.30723.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InventroyService", "InventroyService\InventroyService.csproj", "{BEFE240C-FE4D-4A81-B211-ABEA8D86FD93}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InventoryService", "InventoryService\InventoryService.csproj", "{BEFE240C-FE4D-4A81-B211-ABEA8D86FD93}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inventory.Context", "Inventory.Context\Inventory.Context.csproj", "{A6F44124-EEEF-4DEF-AD03-E8AC9939EAA2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{BEFE240C-FE4D-4A81-B211-ABEA8D86FD93}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BEFE240C-FE4D-4A81-B211-ABEA8D86FD93}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BEFE240C-FE4D-4A81-B211-ABEA8D86FD93}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6F44124-EEEF-4DEF-AD03-E8AC9939EAA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6F44124-EEEF-4DEF-AD03-E8AC9939EAA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6F44124-EEEF-4DEF-AD03-E8AC9939EAA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6F44124-EEEF-4DEF-AD03-E8AC9939EAA2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
