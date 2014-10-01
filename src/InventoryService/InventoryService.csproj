@@ -47,6 +47,10 @@
     <Reference Include="EntityFramework.SqlServer">
       <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Inventory.Common, Version=0.1.0.24191, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Inventory.Common.0.1.0-alpha\lib\net451\Inventory.Common.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.ServiceModel.Activation" />
@@ -97,10 +101,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Inventory.Common\Inventory.Common.csproj">
-      <Project>{FA7DC550-C047-4061-BE5F-D55F352747B8}</Project>
-      <Name>Inventory.Common</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Inventory.Context\Inventory.Context.csproj">
       <Project>{a6f44124-eeef-4def-ad03-e8ac9939eaa2}</Project>
       <Name>Inventory.Context</Name>

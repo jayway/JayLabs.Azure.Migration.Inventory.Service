@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>Niklas Lundberg, Per Okvist</authors>
+    <owners>JayLabs</owners>
+    <licenseUrl>http://opensource.org/licenses/MS-PL</licenseUrl>
+    <projectUrl>https://github.com/jayway/JayLabs.Azure.Migration.Inventory.Service</projectUrl>
+    <iconUrl>http://jayway.com/icons/jay_labs.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>$description$</description>
+    <copyright>Copyright 2014</copyright>
+  </metadata>
+</package>
+
