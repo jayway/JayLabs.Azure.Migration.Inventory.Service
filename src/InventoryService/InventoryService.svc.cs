@@ -28,15 +28,15 @@ namespace InventroyService
         public ProductView GetProduct(Guid itemId)
         {
             return
-                Context.Products
-                    .Select(x => Map(x))
+                Context.Products.ToList()
+                    .Select(Map)
                     .FirstOrDefault(x => x.ProductId == itemId);
         }
 
         [OperationContract]
         public IEnumerable<ProductView> GetProducts()
         {
-            return Context.Products.Select(x => Map(x));
+            return Context.Products.ToList().Select(Map);
         }
 
         [OperationContract]
