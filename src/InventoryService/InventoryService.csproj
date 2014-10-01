@@ -74,18 +74,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ActiveProductCommand.cs" />
-    <Compile Include="CreateProductCommand.cs" />
-    <Compile Include="DeActivateCommand.cs" />
     <Compile Include="Dispatcher.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="ProductView.cs" />
     <Compile Include="InventoryService.svc.cs">
       <DependentUpon>InventoryService.svc</DependentUpon>
     </Compile>
-    <Compile Include="IInventoryService.cs" />
     <Compile Include="InventoryServiceHost.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -102,6 +97,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Inventory.Common\Inventory.Common.csproj">
+      <Project>{FA7DC550-C047-4061-BE5F-D55F352747B8}</Project>
+      <Name>Inventory.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Inventory.Context\Inventory.Context.csproj">
       <Project>{a6f44124-eeef-4def-ad03-e8ac9939eaa2}</Project>
       <Name>Inventory.Context</Name>

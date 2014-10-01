@@ -1,10 +1,10 @@
-using System;
+﻿using System;
 using System.Runtime.Serialization;
 
-namespace InventroyService
+namespace Inventory.Common
 {
     [DataContract]
-    public class DeActivateCommand
+    public class ActiveProductCommand
     {
         [DataMember]
         public Guid ProductId { get; set; }

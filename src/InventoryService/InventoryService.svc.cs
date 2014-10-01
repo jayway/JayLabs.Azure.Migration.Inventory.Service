@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.ServiceModel;
+using Inventory.Common;
 using Inventory.Context;
 
 namespace InventroyService
 {
     // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
+    [ServiceContract]
     public class InventoryService : IInventoryService
     {
         private readonly Func<IInventoryContext> _contextFactory;
@@ -20,6 +23,7 @@ namespace InventroyService
             _contextFactory = contextFactory;
         }
 
+        [OperationContract]
         public ProductView GetProduct(Guid itemId)
         {
             return
@@ -28,11 +32,13 @@ namespace InventroyService
                     .FirstOrDefault(x => x.ProductId == itemId);
         }
 
+        [OperationContract]
         public IEnumerable<ProductView> GetProducts()
         {
             return Context.Products.Select(x => Map(x));
         }
 
+        [OperationContract]
         public void Create(CreateProductCommand command)
         {
             Context.Products.Add(new Product()
@@ -44,14 +50,14 @@ namespace InventroyService
             });
             Context.SaveChanges();
         }
-
+        [OperationContract]
         public void Activate(ActiveProductCommand command)
         {
             var product = Context.Products.FirstOrDefault(x => x.Id == command.ProductId);
             if (product != null) product.IsActive = true;
             Context.SaveChanges();
         }
-
+        [OperationContract]
         public void DeActivate(DeActivateCommand command)
         {
             var product = Context.Products.FirstOrDefault(x => x.Id == command.ProductId);

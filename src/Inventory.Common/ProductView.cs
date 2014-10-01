@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.Serialization;
 
-namespace InventroyService
+namespace Inventory.Common
 {
     [DataContract]
     public class ProductView
