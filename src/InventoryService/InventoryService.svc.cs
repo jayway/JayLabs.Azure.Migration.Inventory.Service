@@ -8,11 +8,11 @@ namespace InventroyService
     // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
     public class InventoryService : IInventoryService
     {
-        private IInventoryContext _context;
         private readonly Func<IInventoryContext> _contextFactory;
 
-        private  IInventoryContext Context {
-            get { return _context ?? (_context = _contextFactory()); }
+        private IInventoryContext Context
+        {
+            get { return _contextFactory(); }
         }
 
         public InventoryService(Func<IInventoryContext> contextFactory)
@@ -20,24 +20,12 @@ namespace InventroyService
             _contextFactory = contextFactory;
         }
 
-
         public ProductView GetProduct(Guid itemId)
         {
             return
                 Context.Products
                     .Select(x => Map(x))
                     .FirstOrDefault(x => x.ProductId == itemId);
-        }
-
-        private static ProductView Map(Product product)
-        {
-            return new ProductView()
-            {
-                Description = product.Description,
-                IsActive = product.IsActive,
-                Name = product.Name,
-                ProductId = product.Id
-            };
         }
 
         public IEnumerable<ProductView> GetProducts()
@@ -70,5 +58,17 @@ namespace InventroyService
             if (product != null) product.IsActive = false;
             Context.SaveChanges();
         }
+
+        private static ProductView Map(Product product)
+        {
+            return new ProductView()
+            {
+                Description = product.Description,
+                IsActive = product.IsActive,
+                Name = product.Name,
+                ProductId = product.Id
+            };
+        }
+
     }
 }

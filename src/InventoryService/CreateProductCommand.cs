@@ -3,7 +3,7 @@
 namespace InventroyService
 {
     [DataContract]
-    public class CreateProductCommand
+    public class CreateProductCommand 
     {
         [DataMember]
         public string ProductName { get; set; }
