@@ -3,12 +3,12 @@
 namespace InventroyService
 {
     [DataContract]
-    public class InventoryItem
+    public class CreateProductCommand
     {
         [DataMember]
-        public bool  InStock { get; set; }
+        public string ProductName { get; set; }
 
         [DataMember]
-        public string Name { get; set; }
+        public string Description { get; set; }
     }
 }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Inventory.Context
 {
-    public class InventoryContext : DbContext 
+    public class InventoryContext : DbContext, IInventoryContext
     {
         public InventoryContext()
         {

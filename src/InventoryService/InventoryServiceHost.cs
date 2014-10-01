@@ -10,8 +10,9 @@ namespace InventroyService
     {
         protected override ServiceHost CreateServiceHost(Type serviceType, Uri[] baseAddresses)
         {
-            Setup.Initialize("InventoryConnection");
-            var host = new ServiceHost(serviceType, baseAddresses);
+            const string connectionName = "InventoryConnection";
+            var ctx = Setup.Initialize(connectionName);
+            var host = new ServiceHost(new InventoryService(() => new InventoryContext(connectionName)), baseAddresses);
             host.AddServiceEndpoint(typeof(IInventoryService), new WSHttpBinding(), "");
             return host;
         }

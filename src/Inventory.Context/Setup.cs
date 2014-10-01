@@ -5,12 +5,13 @@ namespace Inventory.Context
 {
     public class Setup
     {
-        public static void Initialize(string connectionName)
+        public static IInventoryContext Initialize(string connectionName)
         {
-           Database.SetInitializer(new CreateDatabaseIfNotExists<InventoryContext>());
+           Database.SetInitializer(new DropCreateDatabaseIfModelChanges<InventoryContext>());
             var ctx = new InventoryContext(connectionName);
             //Force DB
             var f = ctx.Products.FirstOrDefault();
+            return ctx;
         }     
     }
 }

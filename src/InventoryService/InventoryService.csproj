@@ -74,10 +74,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActiveProductCommand.cs" />
+    <Compile Include="CreateProductCommand.cs" />
+    <Compile Include="DeActivateCommand.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="InventoryItem.cs" />
+    <Compile Include="ProductView.cs" />
     <Compile Include="InventoryService.svc.cs">
       <DependentUpon>InventoryService.svc</DependentUpon>
     </Compile>

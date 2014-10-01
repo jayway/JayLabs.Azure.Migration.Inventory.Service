@@ -11,6 +11,18 @@ namespace InventroyService
     public interface IInventoryService
     {
         [OperationContract]
-        InventoryItem GetItem(int itemId);
+        ProductView GetProduct(Guid itemId);
+
+        [OperationContract]
+        IEnumerable<ProductView> GetProducts();
+
+        [OperationContract]
+        void Create(CreateProductCommand command);
+
+        [OperationContract]
+        void Activate(ActiveProductCommand command);
+
+        [OperationContract]
+        void DeActivate(DeActivateCommand command);
     }
 }
